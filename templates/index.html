@@ -19,7 +19,7 @@
             </div>
         </nav>
         <div class="container-sm  pt-2">
-            <form action='/analyse' method='get'>
+            <form action='/analyse' method='post'>{% csrf_token %}
                 <div class="mb-3">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Text Area</label>

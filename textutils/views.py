@@ -14,12 +14,14 @@ def index(request):
 
 
 def analyse(request):
+    # CSRF TOKEN
     # Get The Text
-    dj_text = (request.GET.get('text', 'default'))
+    dj_text = request.POST.get('text', 'default')
+    print(dj_text)
     # Check Box
-    dj_remove_punctuation = (request.GET.get('remove_punctuation', 'off'))
-    dj_full_capitalize = (request.GET.get('full_capitalize', 'off'))
-    dj_char_counter = (request.GET.get('char_counter', 'off'))
+    dj_remove_punctuation = request.POST.get('remove_punctuation', 'off')
+    dj_full_capitalize = request.POST.get('full_capitalize', 'off')
+    dj_char_counter = request.POST.get('char_counter', 'off')
 
     if dj_char_counter == "on":
         analyzed_len = len(dj_text)
